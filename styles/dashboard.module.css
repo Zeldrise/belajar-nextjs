@@ -1,0 +1,19 @@
+.dashboard{
+  height: 3vw;
+  width: 6vw;
+  background-color: blueviolet;
+  border-radius: 20%;
+  margin: auto;
+  text-align: center;
+  padding-block: 10px;
+  transition: 0.5s;
+}
+.button{
+  height: 3vw;
+  width: 6vw;
+  
+}
+.dashboard:hover{
+  height: 4vw;
+  width: 7vw;
+}

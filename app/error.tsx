@@ -14,10 +14,22 @@ export default function Error({
     console.error(error);
   }, [error]);
   return (
-    <div>
-      <p>error bro</p>
-      <button onClick={() => reset()}>ulang</button>
-      <Link href="/dashboard">balik ah</Link>
-    </div>
+    <main className="flex min-h-screen">
+      <div className="my-auto mx-auto">
+        <p className="text-center text-3xl font-bold">error!</p>
+        <button
+          className="p-2 m-2 bg-blue-900 rounded-lg text-white"
+          onClick={() => reset()}
+        >
+          ulang
+        </button>
+        <Link
+          className="p-2 m-2 bg-blue-900 rounded-lg text-white"
+          href="/dashboard"
+        >
+          Kembali
+        </Link>
+      </div>
+    </main>
   );
 }

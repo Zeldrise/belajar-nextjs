@@ -3,29 +3,24 @@ import Link from "next/link";
 import SectionProfile from "./sectionProfile";
 
 export const metadata: Metadata = {
-  title: "ini setting ya",
+  title: "settings",
 };
 
 export default function settings() {
+  const Item = () => (
+    <p className="p-3  bg-blue-900 text-white rounded-md my-12 mx-2 transition-all hover:bg-gray-400 ">
+      Settings
+    </p>
+  );
   return (
-    <main className="h-screen">
-      <div className="w-80 h-36 bg-blue-500 item-center">
+    <main className="flex min-h-screen">
+      <div className=" rounded-lg border-dashed border-4  border-blue-900 bg-transparent my-auto mx-auto">
         <div className="flex">
-          {" "}
-          <p className="w-20 h-10 bg-red-500 rounded-md m-2 transition-colors hover:bg-gray-400">
-            settings
-          </p>
-          <p className="w-20 h-10 bg-red-500 rounded-md m-2 transition-colors hover:bg-gray-400">
-            settings
-          </p>
-          <p className="w-20 h-10 bg-red-500 rounded-md m-2 transition-colors hover:bg-gray-400">
-            settings
-          </p>
-          <p className="w-20 h-10 bg-red-500 rounded-md m-2 transition-colors hover:bg-gray-400">
-            settings
-          </p>
+          {Item()}
+          {Item()}
+          {Item()}
+          {Item()}
         </div>
-        <SectionProfile />
       </div>
     </main>
   );

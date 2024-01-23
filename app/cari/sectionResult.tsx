@@ -15,14 +15,14 @@ export default function SectionResult({query}:Props) {
     <div style={{marginTop:"10px"}}>
       <p>Hasil pencarian : {query}</p>
       <div>
-        {loading && "bentar"}
+        {loading && "Sebentar"}
         {data && data.items.map((user:any,index:number)=>{
           return (
-            <ul key={index}>
-              <li>
+            <ul key={index} className="flex space-x-2 my-2">
+              <li className="p-2 bg-blue-400 rounded-lg text-black list-disc">
                 <Link href={`/cari/${user.login}`}>{user.login}</Link>
               </li>
-              <li>
+              <li className="p-2 bg-blue-900 rounded-lg  text-white">
                 <Link href={user.repos_url}>repo</Link>
               </li>
             </ul>

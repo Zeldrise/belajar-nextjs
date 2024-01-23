@@ -6,6 +6,7 @@ import "./globals.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 // export const metadata: Metadata = {
@@ -22,41 +23,31 @@ export default function RootLayout({
   const klik = (url: string) => {
     router.push(url);
   };
+  const menuItem=(url:string,title:string)=>(
+<li className="px-2">
+  <Link
+    href={url}
+    className="p-2 bg-transparent rounded-full border-4 border-blue-900 transition-colors hover:bg-blue-900 text-white "
+  >
+    {title}
+  </Link>
+</li>
+  )
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex w-full h-20 bg-green-500 item-center">
-          <ul className="flex mx-auto m-2">
-            <li className="px-2">
-              <Link href="/" className="bg-red-200 rounded border">
-                Home
-              </Link>
-            </li>
-            <li className="px-2">
-              <Link href="/dashboard" className="bg-red-200 rounded border">
-                Dashboard
-              </Link>
-            </li>
-            <li className="px-2">
-              <Link href="/settings" className="bg-red-200 rounded border">
-                Settings
-              </Link>
-            </li>
-            <li className="px-2">
-              <Link href="/calculator" className="bg-red-200 rounded border">
-                Calculator
-              </Link>
-            </li>
-            <li className="px-2">
-              <Link href="/cari" className="bg-red-200 rounded border">
-                Cari orang
-              </Link>
-            </li>
+        <div className="flex w-full h-20 bg-gray-500 item-center">
+          <ul className="flex mx-auto my-auto">
+            {menuItem("/", "Home")}
+            {menuItem("/dashboard", "Dashboard")}
+            {menuItem("/settings", "Settings")}
+            {menuItem("/calculator", "Calculator")}
+            {menuItem("/cari", "Cari orang")}
           </ul>
         </div>
         {children}
-        <div className="flex w-full h-36 bg-green-500 item-center">
-          <p className="w-30 h-10 bg-red-500 rounded-md m-2 transition-colors hover:bg-gray-400">
+        <div className="flex mt-auto w-full h-20 bg-gray-500 item-center">
+          <p className="bg-blue-900 rounded-full text-white mx-auto my-auto p-3 transition-colors hover:bg-blue-800">
             footer example
           </p>
         </div>
